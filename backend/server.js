@@ -6,6 +6,7 @@ import userRouter from "./routes/userRoute.js";
 import 'dotenv/config'
 import cartRouter from "./routes/cartRoute.js";
 import orderRouter from "./routes/orderRoute.js";
+import path from 'path'
 
 // app config
 const app = express()
@@ -30,7 +31,15 @@ app.get("/",(req,res)=>{
     res.send("API working")
 })
 
+// Serve static files from the React app (build folder)
+const __dirname = path.resolve(); // Needed if you're using ES6 modules
+app.use(express.static(path.join(__dirname, 'build')));
+
+// Catch-all route that sends the React app's index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 app.listen(port,()=>{
     console.log(`server started on http://localhost:${port}`)
-    console.log(`Running in ${process.env.NODE_ENV} mode`);
 })
