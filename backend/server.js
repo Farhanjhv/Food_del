@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000
 // middleware
 app.use(express.json())
 app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:5174", // Set to your frontend's URL
+    origin: process.env.FRONTEND_URL || "https://food-del-fe.onrender.com", // Set to your frontend's URL
     credentials: true,
 }));
 
