@@ -16,4 +16,4 @@ export const assets ={
     list_icon
 }
 
-export const url = 'https://food-del-xqn6.onrender.com'
+export const url = 'https://food-del-backend-ye99.onrender.com'
