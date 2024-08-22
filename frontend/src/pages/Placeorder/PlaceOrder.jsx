@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import './Placeorder.css'
+import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext'
 import { useNavigate } from 'react-router-dom'
 
-const Placeorder = () => {
+const PlaceOrder = () => {
   const { getTotalCartAmount, token, food_list, cartItems, url } = useContext(StoreContext)
 
   const [data, setData] = useState({
@@ -121,4 +121,4 @@ const Placeorder = () => {
   )
 }
 
-export default Placeorder
+export default PlaceOrder
